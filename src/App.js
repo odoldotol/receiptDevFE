@@ -46,7 +46,7 @@ function App() {
                 setWorkStatus(`일 하는중... 잠시 기다려주세요.`);
                 const requestForm = document.getElementById('requestForm');
                 const requestFormData = new FormData(requestForm);
-                await axios.post('http://localhost:5000/receipt-to-sheet', requestFormData)
+                await axios.post(`${process.env.REACT_APP_BE_URL}/receipt-to-sheet`, requestFormData)
                   .then((response) => {
                     setWorkStatus('');
                     // console.log('OK', response);
